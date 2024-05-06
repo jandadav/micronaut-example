@@ -1,0 +1,18 @@
+micronaut:
+  application:
+    name: demo
+  server:
+    port: ${SERVER_PORT:7077}
+  http:
+#    client:
+#      log-level: trace
+    services:
+      client:
+        url: ${CLIENT:`http://localhost:8088`}
+netty:
+  default:
+    allocator:
+      max-order: 3
+logger:
+  levels:
+    io.micronaut.http.client: TRACE
